@@ -1,0 +1,34 @@
+name: ArcaneBot
+version: 1
+author: Morios / Mark Talrey
+description: Morios' Homunculus. Get it? Because it's Arcane?...
+
+main: golem.ArcaneBotPlugin
+
+commands:
+  golem:
+    description: Main command for the Bot.
+  golem calc:
+    description: Solves a math problem.
+    usage: "golem calc <expression> (see Java's Math page)"
+  golem order:
+    description: Runs a console command.
+    usage: "golem order <command> (ex: 'say hi')"
+
+permissions:
+  golem.*:
+    description: Masters of the bot.
+    default: op
+    children:
+      golem.wake: true
+      golem.order: true
+      golem.calc: true
+  golem.wake:
+    description: who can activate the bot.
+    default: op
+  golem.order:
+    description: who can issue commands through the bot.
+    default: op
+  golem.calc:
+    description: who can ask the golem for number crunching.
+    default: true
