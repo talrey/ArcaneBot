@@ -49,9 +49,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 	{
 		if (cmd.getName().equals("golem"))
 		{
-			boolean canDo = false;
-			
-			if (args.length == 0)
+			if (args == null || args.length == 0 || args[0].isEmpty())
 			{
 				return false;
 			}
@@ -66,7 +64,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 				}
 				else if (args[0].equals("calc"))
 				{
-					if (args[1] == null || args[1].isEmpty())
+					if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("please provide an expression");
 						return false;
@@ -76,7 +74,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 				}
 				else if (args[0].equals("order"))
 				{
-					if (args[1] == null || args[1].isEmpty())
+					if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("Please provide a command");
 						return false;
@@ -97,7 +95,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 				}
 				else if (args[0].equals("calc"))
 				{
-					if (args[1] == null || args[1].isEmpty())
+					if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("please provide an expression");
 						return false;
@@ -107,7 +105,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 				}
 				else if (args[0].equals("order"))
 				{
-					if (args[1] == null || args[1].isEmpty())
+					if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("Please provide a command");
 						return false;
@@ -126,7 +124,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 			else if ( ((Player)sender).hasPermission("golem.calc") &&
 						args[0].equals("calc") )
 			{
-				if (args[1] == null || args[1].isEmpty())
+				if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("please provide an expression");
 						return false;
@@ -138,7 +136,7 @@ public final class ArcaneBotPlugin extends JavaPlugin
 			else if ( ((Player)sender).hasPermission("golem.order") &&
 						args[0].equals("order") )
 			{
-				if (args[1] == null || args[1].isEmpty())
+				if (args.length == 1 || args[1] == null || args[1].isEmpty())
 					{
 						sender.sendMessage("Please provide a command");
 						return false;
